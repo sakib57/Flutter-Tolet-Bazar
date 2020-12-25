@@ -28,6 +28,14 @@ dependencies:
   badges: ^1.1.4
   provider: ^4.3.2+3
   circular_profile_avatar: ^1.0.8
+  autocomplete_textfield: ^1.7.3
+  fluttertoast: ^7.1.1
+  google_maps_flutter: ^1.0.6
+  geolocator: ^6.1.6
+  flutter_polyline_points: ^0.2.4
+  month_picker_dialog: ^0.3.3
+  intl: ^0.16.1
+  image_picker: ^0.6.7+17
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:tolet_bazar/models/Address.dart';
 import 'dart:convert';
 
 import 'package:tolet_bazar/models/Category.dart';
@@ -7,6 +8,7 @@ import 'package:http/http.dart' as http;
 import '../constants.dart';
 
 class AppData extends ChangeNotifier {
+  Address pickupLocation, dropOffLocation;
   List<Category> categories = List<Category>();
 
   Future<List<Category>> fetchCategories() async {
@@ -29,5 +31,15 @@ class AppData extends ChangeNotifier {
       } catch (e) {}
     }
     return categories;
+  }
+
+  void updatePickupAddress(Address pickupAddress) {
+    pickupLocation = pickupAddress;
+    notifyListeners();
+  }
+
+  void updateDropOffAddress(Address dropOffAddress) {
+    dropOffLocation = dropOffAddress;
+    notifyListeners();
   }
 }

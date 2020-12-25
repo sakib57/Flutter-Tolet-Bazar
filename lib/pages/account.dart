@@ -6,6 +6,7 @@ import 'package:tolet_bazar/components/account_counter.dart';
 import 'package:tolet_bazar/components/account_menu.dart';
 import 'package:tolet_bazar/components/account_page_background.dart';
 import 'package:tolet_bazar/constants.dart';
+import 'package:tolet_bazar/pages/create_post.dart';
 import 'package:tolet_bazar/pages/my_posts.dart';
 
 class Account extends StatefulWidget {
@@ -90,9 +91,17 @@ class _AccountState extends State<Account> {
                 padding: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: Column(
                   children: [
-                    AccountMenu(
-                      icon: Icons.edit,
-                      title: "Create New Post",
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CreatePost()));
+                      },
+                      child: AccountMenu(
+                        icon: Icons.edit,
+                        title: "Create New Post",
+                      ),
                     ),
                     AccountMenu(
                       icon: Icons.location_pin,

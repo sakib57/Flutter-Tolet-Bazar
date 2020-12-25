@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tolet_bazar/components/post_tile.dart';
 
 class MyPosts extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _MyPostsState extends State<MyPosts> with SingleTickerProviderStateMixin {
           centerTitle: true,
           bottom: TabBar(
             unselectedLabelColor: Colors.white,
-            //labelColor: Colors.bl,
+            //labelColor: Colors.black,
             tabs: [
               Tab(
                 child: Text("Upcomming"),
@@ -39,8 +40,58 @@ class _MyPostsState extends State<MyPosts> with SingleTickerProviderStateMixin {
         ),
         body: TabBarView(
           children: [
-            Center(child: Text("Call Tab Bar View")),
-            Center(child: Text("Chats Tab Bar View")),
+            // ====== Upcoming Posts =======
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  PostTile(
+                    image: "assets/dd.jpg",
+                    targetMonth: "January 2021",
+                    category: "Family",
+                    location: "Chourhash Kushtia",
+                    rent: "37000",
+                    bed: "4",
+                  ),
+                  PostTile(
+                    image: "assets/ee.jpg",
+                    targetMonth: "February 2021",
+                    category: "Bachelor",
+                    location: "Mojompur Kushtia",
+                    rent: "23000",
+                    bed: "2",
+                  ),
+                ],
+              ),
+            ),
+            // ====== Previous Posts =======
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  PostTile(
+                    image: "assets/ee.jpg",
+                    targetMonth: "February 2021",
+                    category: "Bachelor",
+                    location: "Mojompur Kushtia",
+                    rent: "23000",
+                    bed: "2",
+                  ),
+                  PostTile(
+                    image: "assets/dd.jpg",
+                    targetMonth: "January 2021",
+                    category: "Family",
+                    location: "Chourhash Kushtia",
+                    rent: "37000",
+                    bed: "4",
+                  ),
+                ],
+              ),
+            ),
           ],
           controller: _tabController,
         ),
